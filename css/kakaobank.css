@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+}
+section{
+    font-family: '카카오 큰글씨','ExtraBold','KakaoBigSans-ExtraBold','FONTRIX;KakaoBigSans;ExtraBold';
+}
+.head-bar{
+    position: absolute;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    /* background-color: white; */
+    background-color: transparent;
+}
+.head-bar:hover{
+    background: white;
+}
+.logo{
+    margin: auto 50px;
+}
+.head-bar ul{
+    display: flex;
+    list-style: none;
+    font-size: 12px;
+    margin: auto 20px;
+}
+.head-bar li a{
+    text-decoration: none;
+    color: black;
+    margin: 20px;
+}
+/* 부모 - relative, 자식 - absolute 는 둘이 겹치게 만든다 */
+.videobox{
+    width: 100%;
+    position: relative;
+}
+.videobox h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* translate(%)의 기준은 부모가 아니라 자기 자신의 크기 */
+    /* 중앙 정렬할때에는 3개 무조건 같이 */
+    font-size: 70px;
+    font-weight: 1000;
+    color: white;
+}
+.videobox video{
+    width: 100%;
+    display: block;
+}
+.spread{
+    position: relative;
+    width: 600px; /* 전체 영역 */
+    height: 300px;
+    margin: 100px auto;
+}
+.spread img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+}
+
+.spread img:nth-child(1){
+    animation: moveOut1 1s ease forwards;
+}
+
+@keyframes moveOut1{
+    from{
+        transform: translate(-50%, -50%);
+    }
+    to{
+        transform: translateX(-260px);
+    }
+
+}
+
+.spread img:nth-child(1){z-index: 1;}
+.spread img:nth-child(2){z-index: 2;}
+.spread img:nth-child(3){z-index: 3;}
+.spread img:nth-child(4){z-index: 2;}
+.spread img:nth-child(5){z-index: 1;}

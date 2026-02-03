@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4ec79785b5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/toss.css">
+    <title>Toss</title>
+</head>
+<body>
+    <header>
+        <section class="head-section1">
+        <nav>
+            <ul>
+                <div class="logo"><li><a href="#"><img src="./images/tosslogo.png" alt=""></a></li></div>
+                <div class="navbar">
+                    <li><a href="#">회사 소개</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">자주 묻는 질문</a></li>
+                    <li><a href="#">토스 인증서</a></li>
+                    <li><a href="#">채용</a></li>
+                </div>
+                <div class="lang">
+                    <li><a href="#">KOR</a></li>
+                    <li>|</li>
+                    <li><a href="#">ENG</a></li>
+                </div>
+                <div class="download">
+                    <li><a class="appdownload" href="#">앱 다운로드</a></li>
+                    <li><i class="fa-solid fa-bars"></i></li>
+                </div>
+            </ul>
+        </nav>
+    </section>
+    <section class="head-section2">
+        <h1>금융의 모든 것<br>토스에서 쉽고 간편하게</h1>
+        <div class="download-btn">
+            <a href="#">App Store</a>
+            <a href="#">Google Play</a>
+        </div>
+    </section>
+    </header>
+    <main>
+        <div class="main-section1">
+            <p>내 모든 금융 내역을 한 눈에 조회하고 한 곳에서 관리하세요. <br>이제껏 경험 못 했던 쉽고 편리한 금융 서비스,<br>토스와 함께라면 당신의 일상이 새로워질 거예요.</p>
+        </div>
+        <section class="main-section2">
+            <div class="title"><p>홈 • 소비</p></div>
+            <div class="text"><p>내 돈 관리,<br>지출부터 일정까지<br>똑똑하게</p></div>
+            
+            <div class="phone-mock">
+                <img class="screen" src="./images/iphonetossbg1.png" alt="">
+                <img class="frame" src="./images/iphonetoss1.png" alt="">
+            </div>
+            <div class="phone-mock2">
+                <img class="screen2" src="./images/iphonetossbg2.png" alt="">
+                <img class="frame2" src="./images/iphonetoss2.png" alt="">
+            </div>
+        </section>
+    </main>
+    <section class="footer">
+        <div class="grid">
+            <div class="box2">서비스</div>
+            <div class="box"><a href="" class="footerbtn">공지사항</a></div>
+            <div class="box"><a href="" class="footerbtn">자주 묻는 질문</a></div>
+            <div class="box"><a href="" class="footerbtn">공동 인증서 관리</a></div>
+            <div class="box"><a href="" class="footerbtn">계정 일시잠금</a></div>
+            <div class="box"><a href="" class="footerbtn">고객센터</a></div>
+            <div class="box"><a href="" class="footerbtn">브랜드 리소스센터</a></div>
+        </div>
+        <div class="grid">
+            <div class="box2">회사</div>
+            <div class="box"><a href="" class="footerbtn">회사 소개</a></div>
+            <div class="box"><a href="" class="footerbtn">토스페이먼츠</a></div>
+            <div class="box"><a href="" class="footerbtn">토스인슈어런스</a></div>
+        </div>
+        <div class="grid">
+            <div class="box2">문의</div>
+            <div class="box"><a href="" class="footerbtn">사업 제휴</a></div>
+            <div class="box"><a href="" class="footerbtn">토스쇼핑 입점문의</a></div>
+            <div class="box"><a href="" class="footerbtn">광고 문의</a></div>
+            <div class="box"><a href="" class="footerbtn">인증 사업 문의</a></div>
+            <div class="box"><a href="" class="footerbtn">마케팅 ・ PR</a></div>
+            <div class="box"><a href="" class="footerbtn">IR</a></div>
+        </div>
+        <div class="grid">
+            <div class="box2">고객센터</div>
+            <div class="box"><a href="" class="footerbtn">전화: 1599-4905</a></div>
+            <div class="box"><a href="" class="footerbtn">이메일(고객전용): support@toss.im</a></div>
+            <div class="box"><a href="" class="footerbtn">이메일(외부기관전용): safe@toss.im</a></div>
+            <div class="box"><a href="" class="footerbtn">민원접수</a></div>
+            </div>
+        <div class="grid">
+            <div class="box2">윤리경영</div>
+            <div class="box"><a href="" class="footerbtn">상담/신고</a></div>
+        </div>
+    </section>
+</body>
+
+<!-- 지정된 위치까지 스크롤 시 애니메이션 속성이 작동하게 함 -->
+<script>
+    const targets = document.querySelectorAll(".main-section2");
+  
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0,              
+      rootMargin: "-50% 0px -50% 0px" 
+    });
+  
+    targets.forEach(t => io.observe(t));
+  </script>
+</html>
