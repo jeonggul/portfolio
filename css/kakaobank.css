@@ -10,7 +10,7 @@ section{
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 20px;
+    padding: 20px 0;
     /* background-color: white; */
     background-color: transparent;
 }
@@ -63,25 +63,126 @@ section{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 250px;
+    width: 180px;
 }
 
+.ilsang{
+    padding-top: 100px;
+    text-align: center;
+    padding-bottom: 150px;
+}
+.ilsang h1{
+    line-height: 50px;
+    padding-bottom: 100px;
+}
+
+/* 이미지가 양 옆으로 펼쳐짐 */
 .spread img:nth-child(1){
     animation: moveOut1 1s ease forwards;
 }
-
-@keyframes moveOut1{
-    from{
-        transform: translate(-50%, -50%);
-    }
-    to{
-        transform: translateX(-260px);
-    }
-
+.spread img:nth-child(2){
+    animation: moveOut2 1s ease forwards;
 }
 
+.spread img:nth-child(4){
+    animation: moveOut4 1s ease forwards;
+}
+.spread img:nth-child(5){
+    animation: moveOut5 1s ease forwards;
+}
+
+@keyframes moveOut1{
+    from{transform: translate(-50%, -50%);}
+    to{transform:translate(-50%, -50%) translateX(-390px) rotate(-6deg);}
+}
+@keyframes moveOut2{
+    from{transform: translate(-50%, -50%);}
+    to{transform:translate(-50%, -40%) translateX(-200px) rotate(2deg);}
+}
+@keyframes moveOut4{
+    from{transform: translate(-50%, -50%);}
+    to{transform:translate(-50%, -60%) translateX(200px) rotate(-3deg);}
+}
+@keyframes moveOut5{
+    from{transform: translate(-50%, -50%);}
+    to{transform:translate(-50%, -50%) translateX(390px) rotate(6deg);}
+}
+
+/* 각 이미지마다 우선순위 부여 */
 .spread img:nth-child(1){z-index: 1;}
 .spread img:nth-child(2){z-index: 2;}
 .spread img:nth-child(3){z-index: 3;}
-.spread img:nth-child(4){z-index: 2;}
-.spread img:nth-child(5){z-index: 1;}
+.spread img:nth-child(4){z-index: 1;}
+.spread img:nth-child(5){z-index: 2;}
+
+/* news */
+.news{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.news-sec{
+    margin: 20px;
+}
+.news-sec h2{
+    padding-bottom:50px ;
+}
+.imgbox{
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    /* 이미지 center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgbox img{
+    width: 800px;
+}
+.main-news{
+    background: rgba(0, 0, 0, 0.6);
+    height: 350px;
+    position: absolute;
+    left: 0; top: 0;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+.main-news p{
+    font-size: 14px;;
+}
+
+.sub-news-box{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 10px 20px;
+}
+.sub-news hr{
+    color: rgba(0, 0, 0, 0.1);
+    margin: 15px auto;
+}
+/* 3줄 넘어가면 ...으로 나머지 내용 가려짐 */
+.sub-news-box p{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.date-box{
+    display: flex;
+    background-color: lightgray;
+    width: 560px;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+#dateLine{
+    color: gray;
+}
