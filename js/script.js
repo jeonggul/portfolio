@@ -101,7 +101,7 @@ const gyungyung_sec = document.querySelector('.gyungyung-sec');
 
 window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    if(scrollY >= 2000) {
+    if(scrollY >= 1800) {
         gyungyung_sec. classList.add('gy_active');
     }
 });
