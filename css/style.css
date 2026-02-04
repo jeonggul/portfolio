@@ -1,16 +1,16 @@
 @font-face {
     font-family: "Ownglyph_wiseelist-Rg";
-    src: url("../fonts/온글잎 위씨리스트.ttf") format("ttf");
+    src: url("../css/fonts/온글잎 위씨리스트.ttf") format("ttf");
     font-style: normal;
     font-display: swap;
 }
 @font-face{
     font-family: "Just Breathe";
-    src: url("../fonts/JustBreathe.otf") format("otf");
+    src: url("../css/fonts/JustBreathe.otf") format("otf");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-  }
+}
 
 *{
     /* font-family: '나눔스퀘어', 'NanumSquareL', '1.000;SAND;NanumSquareL;160623_01;'; */
