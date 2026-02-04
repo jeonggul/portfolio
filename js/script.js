@@ -17,7 +17,7 @@ window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
 
-    if(scrollY >= 650) {
+    if(scrollY >= 550) {
         faq[0]. classList.add('faq_active');
     }
 });
