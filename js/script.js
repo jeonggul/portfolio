@@ -76,3 +76,4 @@ window.addEventListener('scroll', () => {
         gyungyung_sec. classList.add('gy_active');
     }
 });
+
