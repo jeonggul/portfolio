@@ -1,3 +1,5 @@
+/* index.html - 애니메이션이 나타나는 특정 위치 지정 */
+
 const titles = document.querySelectorAll('.title');
 
 window.addEventListener('scroll', () => {
