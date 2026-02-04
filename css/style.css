@@ -160,25 +160,6 @@ img{
     color: black;
 }
 
-@media (max-width: 997px){
-    .aboutme{
-        display: grid;
-        grid-template-columns: repeat(3, 33%);
-        margin: 20px 50px;
-        justify-content: center;
-    }
-    .box{
-        display: flex;
-        align-items: center;
-        padding: 20px;
-        margin: 10px 20px;
-        border-radius: 20px;
-        box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.1);
-    }
-    .text{
-        overflow-wrap: anywhere;/* 기본 줄바꿈은 break-word, anywhere은 어디서든 줄바꿈 가능. break-word보다 강력함 */
-    }
-}
 
 .top{
     position: fixed;
@@ -208,47 +189,72 @@ img{
     transform: translateY(50px);
 }
 .faq.faq_active {
-animation: moveprojects 1s ease forwards;}
-.accordion{
-    list-style: none;
-}
-.accordion li{
-    margin-bottom:  18px;
-}
-.accordion input{ display: none; }
-
-.accordion label{ 
-    cursor: pointer; 
-    padding: 16px 30px; 
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-.accordion label::after{
-    content: "+";
-    font-size: 30px;
-}
-.accordion .contents-box{
-    padding: 0 16px;
-    overflow: hidden;
-    max-height: 0;
-    /* 숨겨져있다가 서서히 나타날 부분 */
-    transition: 0.3s;
-}
-.accordion input:checked + label + .contents-box {
-    max-height: 600px;
-    padding: 16px;
-
-    
-}
-.accordion input:checked + label::after{
-    transform: rotate(45deg);   
-    transition: 0.3s;
-}
-
-@keyframes moveprojects{
-    to{
-        opacity: 1;
-        transform: translateY(0);
+    animation: moveprojects 1s ease forwards;}
+    .accordion{
+        list-style: none;
     }
-}
+    .accordion li{
+        margin-bottom:  18px;
+    }
+    .accordion input{ display: none; }
+    
+    .accordion label{ 
+        cursor: pointer; 
+        padding: 16px 30px; 
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    .accordion label::after{
+        content: "+";
+        font-size: 30px;
+    }
+    .accordion .contents-box{
+        padding: 0 16px;
+        overflow: hidden;
+        max-height: 0;
+        /* 숨겨져있다가 서서히 나타날 부분 */
+        transition: 0.3s;
+    }
+    .accordion input:checked + label + .contents-box {
+        max-height: 600px;
+        padding: 16px;
+        
+        
+    }
+    .accordion input:checked + label::after{
+        transform: rotate(45deg);   
+        transition: 0.3s;
+    }
+    
+    @keyframes moveprojects{
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @media (max-width: 957px){
+        .aboutme{
+            display: grid;
+            grid-template-columns: repeat(2, 40%);
+            margin: 20px 50px;
+            justify-content: center;
+        }
+        .box{
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin: 10px 20px;
+            border-radius: 20px;
+            box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.1);
+        }
+        .text{
+            overflow-wrap: anywhere;/* 기본 줄바꿈은 break-word, anywhere은 어디서든 줄바꿈 가능. break-word보다 강력함 */
+        }
+    }
+    @media (max-width:665px){
+        .aboutme{
+            grid-template-columns: 1fr;
+        }
+    }
