@@ -50,7 +50,29 @@ window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
 
-    if(scrollY >= 700) {
+    if(scrollY >= 600) {
         ilsang[0]. classList.add('active_bank');
+    }
+});
+
+/* kakaobank - news section */
+const news_sec = document.querySelectorAll('.news-sec');
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+
+    if(scrollY >= 1000) {
+        news_sec[0]. classList.add('news_active');
+    }
+});
+
+/* kakaobank - gyungyung section */
+const gyungyung_sec = document.querySelector('.gyungyung-sec');
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if(scrollY >= 2000) {
+        gyungyung_sec. classList.add('gy_active');
     }
 });
