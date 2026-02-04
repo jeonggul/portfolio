@@ -38,7 +38,7 @@ a{
     color: white;
     width: 60px;
     padding: 6px;
-    border-radius: 20%;
+    border-radius: 10px;
 }
 
 /* 1-2  header - thumbnail */
@@ -61,7 +61,7 @@ a{
     background-color: rgba(0,0,0,0.8);
     color: white;
     padding: 13px;
-    border-radius: 15%;
+    border-radius: 10px;
     font-size: 17px;
     font-weight: bold;
 }

@@ -1,5 +1,7 @@
 *{
-    font-family: '나눔스퀘어', 'NanumSquareL', '1.000;SAND;NanumSquareL;160623_01;';
+    /* font-family: '나눔스퀘어', 'NanumSquareL', '1.000;SAND;NanumSquareL;160623_01;'; */
+    font-family: 'Ownglyph_wiseelist-Rg';
+    font-size: 20px;
     scroll-behavior: smooth; /* 페이지 내에서 버튼 클릭해서 정해놓은 위치로 이동할 때 부드럽게 이동*/
 }
 /* 'just breathe' 폰트 부분 일괄 */
@@ -50,6 +52,11 @@ main{
     margin: 10px 20px;
     border-radius: 20px;
     box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0; transform: translateY(50px);
+    animation: box 1s ease forwards;
+}
+.delay-box{
+    animation-delay: 0.3s;
 }
 
 .icon{
@@ -110,6 +117,12 @@ main h1{
         transform: scale(1);
     }
 }
+@keyframes box{
+    to {
+        opacity: 1; transform: translateY(0);
+    }
+}
+
 
 .designer{
     text-align: center;
@@ -117,8 +130,8 @@ main h1{
     font-size: 20px;
     line-height: 33px;
 }
-.designer h5{
-    font-size: 30px;
+.designer div{
+    font-size: 40px;
 }
 
 .contents-box{
@@ -191,7 +204,11 @@ img{
 .faq{
     max-width: 1200px;/* 가장 큰 가로 사이즈 */
     margin: 60px auto;
+    opacity: 0;
+    transform: translateY(50px);
 }
+.faq.faq_active {
+animation: moveprojects 1s ease forwards;}
 .accordion{
     list-style: none;
 }
@@ -227,4 +244,11 @@ img{
 .accordion input:checked + label::after{
     transform: rotate(45deg);   
     transition: 0.3s;
+}
+
+@keyframes moveprojects{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

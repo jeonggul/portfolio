@@ -11,6 +11,17 @@ window.addEventListener('scroll', () => {
     }
 });
 
+const faq = document.querySelectorAll('.faq');
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+
+    if(scrollY >= 650) {
+        faq[0]. classList.add('faq_active');
+    }
+});
+
 /* radio 태그 선택 강제로 해제하기 */
 const labels = document.querySelectorAll('.accordion label');
 labels.forEach(label => {
