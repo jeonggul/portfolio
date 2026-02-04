@@ -4,10 +4,26 @@ window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
 
-    if(scrollY >= 700) {
+    if(scrollY >= 500) {
         titles[1]. classList.add('active');
     }
 });
+
+/* radio 태그 선택 강제로 해제하기 */
+const labels = document.querySelectorAll('.accordion label');
+labels.forEach(label => {
+    label.addEventListener("click", function (e) {
+        const id = label.getAttribute("for");
+        const input = document.getElementById(id);
+        /* 이미 열려있는 상태라면 */
+        if(input.checked) {
+            e.preventDefault(); /* radio 기본동작 막기 */
+            input.checked = false; /* 강제로 닫기 */
+        }
+        /* 열려 있지 않다면 그냥 radio 기본 동작으로 열림 */
+    });
+});
+
 
 /* kakaobank.html - js */
 /* 실시간 날짜를 보여줌 */

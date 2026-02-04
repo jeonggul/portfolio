@@ -2,10 +2,8 @@
     font-family: '나눔스퀘어', 'NanumSquareL', '1.000;SAND;NanumSquareL;160623_01;';
     scroll-behavior: smooth; /* 페이지 내에서 버튼 클릭해서 정해놓은 위치로 이동할 때 부드럽게 이동*/
 }
-
-
 /* 'just breathe' 폰트 부분 일괄 */
-.logo, nav ul, main h1, h5, .myself, .name, .header-btn{
+.logo, nav ul, main h1, h5, .myself, .name, .header-btn, .accordion li label{
     font-family: 'Just Breathe', 'JustBreathe', 'Just Breathe v0.72';
     font-weight: lighter;
 }
@@ -14,6 +12,7 @@ body{
     background: url(../images/bg.png);
     background-size: cover;
 }
+
 /* header */
 .header{
     display: flex;
@@ -84,9 +83,7 @@ main h1{
     margin: 0; padding: 0;
     opacity: 0;
 }
-/* .title-point p{
 
-} */
 .title.active .title-line{
     animation: lineGrow 0.9s ease forwards;
 }
@@ -124,56 +121,24 @@ main h1{
     font-size: 30px;
 }
 
-.contents{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-gap: 20px 40px;
-    margin: 40px;
-    margin-top: 100px;
-    justify-content: center;
-}
 .contents-box{
-    
-    border-radius: 20px;
     height: 500px;
-    text-align: center;
+    text-align: center;    
     /* opacity: 0; */
 }
 
-.contents-box:hover{
-    animation: img 1s forwards;
-}
-@keyframes img{
-    from{
-        transform: scale(1);
-    }
-    to{
-        transform: scale(1.01);
-        box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.4);
-    }
-}
-
-@keyframes moveIn{
-    from{
-
-    }
-}
 
 h5{
     font-size: 20px;
 }
-
+.contents-box .images{
+    overflow: hidden;
+}
 img{
-    padding: 20px;
-    width: 80%;
-    height: 200px;
-    object-fit: contain;
-    border-radius: 14px;
+    width: 100%;
+    object-fit: fill;
 }
 
-.contents-box p{
-    height: 90px;
-}
 .preview{
     margin-left: 200px;
 }
@@ -200,50 +165,8 @@ img{
     .text{
         overflow-wrap: anywhere;/* 기본 줄바꿈은 break-word, anywhere은 어디서든 줄바꿈 가능. break-word보다 강력함 */
     }
-
-    .contents{
-        display: flex;
-        flex-direction: column;
-    }
-    .contents-box{
-        display: grid;
-        grid-template-columns:1fr 1fr;
-        grid-template-areas: 
-        "title desc"
-        "thumb link"
-        ;
-        align-items: center;
-        height: 300px;
-        padding: 20px 70px;
-        text-align: left;
-        gap: 10px 20px;
-    }
-    .contents-box h5{
-        grid-area: title; margin: 0;
-    }
-    .contents-box img{
-        grid-area: thumb;
-        width: 90%;
-        padding: 0;
-        align-items: start;
-        justify-self: start;
-        transform: translateY(-40px);
-    }
-    .contents-box p{
-        grid-area: desc; margin: 0;
-        height: auto;
-        justify-self: end;
-        text-align: right;
-        padding-top: 80px;
-        line-height: 25px;
-
-    }
-    .preview{
-        grid-area: link; margin-left: 0;
-        justify-self: end;
-        text-align: right;
-    }
 }
+
 .top{
     position: fixed;
     right: 30px;
@@ -261,4 +184,47 @@ img{
 .fa-arrow-up{
     padding: 4px;
     font-size: 20px;
+}
+
+
+/* projects 영역 변경 */
+.faq{
+    max-width: 1200px;/* 가장 큰 가로 사이즈 */
+    margin: 60px auto;
+}
+.accordion{
+    list-style: none;
+}
+.accordion li{
+    margin-bottom:  18px;
+}
+.accordion input{ display: none; }
+
+.accordion label{ 
+    cursor: pointer; 
+    padding: 16px 30px; 
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.accordion label::after{
+    content: "+";
+    font-size: 30px;
+}
+.accordion .contents-box{
+    padding: 0 16px;
+    overflow: hidden;
+    max-height: 0;
+    /* 숨겨져있다가 서서히 나타날 부분 */
+    transition: 0.3s;
+}
+.accordion input:checked + label + .contents-box {
+    max-height: 600px;
+    padding: 16px;
+
+    
+}
+.accordion input:checked + label::after{
+    transform: rotate(45deg);   
+    transition: 0.3s;
 }
