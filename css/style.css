@@ -55,8 +55,13 @@ main{
     opacity: 0; transform: translateY(50px);
     animation: box 1s ease forwards;
 }
-.delay-box{
+.delay-box4, .delay-box5, .delay-box6{
     animation-delay: 0.3s;
+}
+@keyframes box{
+    to {
+        opacity: 1; transform: translateY(0);
+    }
 }
 
 .icon{
@@ -115,11 +120,6 @@ main h1{
     to{
         opacity: 1;
         transform: scale(1);
-    }
-}
-@keyframes box{
-    to {
-        opacity: 1; transform: translateY(0);
     }
 }
 
@@ -252,9 +252,20 @@ img{
         .text{
             overflow-wrap: anywhere;/* 기본 줄바꿈은 break-word, anywhere은 어디서든 줄바꿈 가능. break-word보다 강력함 */
         }
+        .delay-box3, .delay-box4{
+            animation-delay: 0.3s;
+        }
+        .delay-box5, .delay-box6{
+            animation-delay: 0.6s;
+        }
     }
-    @media (max-width:665px){
+    @media (max-width:755px){
         .aboutme{
             grid-template-columns: 1fr;
         }
+        .delay-box2{ animation-delay: 0.3s; }
+        .delay-box3{ animation-delay: 0.6s; }
+        .delay-box4{ animation-delay: 0.9s; }
+        .delay-box5{ animation-delay: 1.2s; }
+        .delay-box6{ animation-delay: 1.5s; }
     }
