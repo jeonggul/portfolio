@@ -1,12 +1,12 @@
 @font-face {
     font-family: "Ownglyph_wiseelist-Rg";
-    src: url("../css/fonts/온글잎 위씨리스트.ttf") format("ttf");
+    src: url("./fonts/온글잎\ 위씨리스트.ttf") format("truetype");
     font-style: normal;
     font-display: swap;
 }
 @font-face{
     font-family: "Just Breathe";
-    src: url("../css/fonts/JustBreathe.otf") format("otf");
+    src: url("./fonts/JustBreathe.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
